@@ -1,0 +1,25 @@
+Bilgisayar alt parçaları olan ekipmanları kullanır ve çalışır normalde constructor da dışardan gelen string vs
+this edip sınıfınkine atarken bu sefer sınıf getirip atıyoruz bi nebze entegre ediyoruz.
+
+
+
+
+
+public class Bilgisayar {
+    private CPU cpu;                          // Cpu tipinde sınıfı tanımlıyoruz
+    private RAM ram;                          //
+    private HardDrive hardDrive;              //
+
+    public Bilgisayar(CPU cpu, RAM ram, HardDrive hardDrive) {        //sınıfları entegre ediyoruz
+        this.cpu = cpu;
+        this.ram = ram;                                              constructor a gelenleri yukarı atıp denkleştiriyoruz.
+        this.hardDrive = hardDrive;
+    }
+
+    public void start() {
+        cpu.process();
+        ram.load();                                                 //sınıfları taktık kullanıyoruz
+        hardDrive.readData();
+        System.out.println("Bilgisayar başlatıldı.");
+    }
+}
